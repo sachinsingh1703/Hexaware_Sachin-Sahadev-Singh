@@ -149,3 +149,84 @@ join applications apt on a.applicantid = apt.applicantid
 join jobs j on apt.jobid = j.jobid
 where j.joblocation = @pre_loc;
 */
+
+--11
+/*
+select distinct(jobtitle), salary 
+from jobs 
+where salary between 60000 and 80000;
+*/
+
+--12
+/*
+select j.jobid, j.jobtitle
+from jobs j left join applications a
+on j.jobid = a.jobid
+where a.applicantid is null;
+*/
+
+--13
+/*
+select a.applicantid, a.firstname, j.companyid, j.jobtitle
+from applicants a 
+left join applications apt on a.applicantid = apt.applicantid
+left join jobs j on apt.jobid = j.jobid;
+*/
+
+--14
+/*
+select c.companyname, count(j.jobid) as cnt
+from companies c
+left join jobs j on c.companyid = j.companyid
+group by c.companyname
+order by cnt desc;
+*/
+
+--15
+/*
+select a.firstname, c.companyname, j.jobtitle
+from applicants a 
+left join applications apt on a.applicantid = apt.applicantid 
+left join jobs j on apt.jobid = j.jobid 
+left join companies c on j.companyid = c.companyid;
+*/
+
+--16
+/*
+select c.companyname, j.salary 
+from companies c
+join jobs j on c.companyid = j.companyid
+where j.salary > (select avg(salary) from jobs);
+*/
+
+--17
+/*
+select a.firstname + ' ' + a.lastname as fullname,
+j.joblocation
+from applicants a 
+left join applications apt on a.applicantid = apt.applicantid
+left join jobs j on apt.jobid = j.jobid ;
+*/
+
+--18
+/*
+select jobid, jobtitle
+from jobs 
+where jobtitle in ('data analyst', 'engineer');
+*/
+
+--19
+/*
+select a.applicantid, a.firstname, j.jobtitle
+from applicants a 
+full outer join applications apt on a.applicantid = apt.applicantid
+full outer join jobs j on apt.jobid = j.jobid;
+*/
+--20
+
+select a.applicantid, c.companyname, c.location
+from applicants a 
+join applications apt on a.applicantid = apt.applicantid
+join jobs j on apt.jobid = j.jobid
+cross join companies c
+where c.location = 'san francisco';
