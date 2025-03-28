@@ -2,17 +2,17 @@ USE techshop;
 
 CREATE TABLE Customers (
 CustomerID INT IDENTITY(1000,1) PRIMARY KEY,
-FirstName NVARCHAR(50) NOT NULL,
-LastName NVARCHAR(50) NOT NULL,
-Email NVARCHAR(100) UNIQUE NOT NULL,
-Phone NVARCHAR(15) UNIQUE NOT NULL,
-Address NVARCHAR(255) NULL
+FirstName VARCHAR(50) NOT NULL,
+LastName VARCHAR(50) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Phone VARCHAR(15) UNIQUE NOT NULL,
+Address VARCHAR(255) NULL
 );
 
 CREATE TABLE Products (
 ProductID INT IDENTITY(2000,1) PRIMARY KEY,
-ProductName NVARCHAR(100) NOT NULL,
-Description NVARCHAR(255) NULL,
+ProductName VARCHAR(100) NOT NULL,
+Description VARCHAR(255) NULL,
 Price DECIMAL(10,2) NOT NULL
 );
 
@@ -62,11 +62,11 @@ INSERT INTO Products (ProductName, Description, Price) VALUES
 ('John Cena T-Shirt', 'Never Give Up - Hustle, Loyalty, Respect', 24.99),
 ('The Rock Action Figure', 'Dwayne The Rock Johnson collectible figure', 19.99),
 ('Stone Cold Beer Mug', 'Austin 3:16 beer glass', 14.99),
-('Triple H Sledgehammer', 'Replica of Triple H’s signature weapon', 49.99),
+('Triple H Sledgehammer', 'Replica of Triple Hâ€™s signature weapon', 49.99),
 ('Randy Orton RKO Hoodie', 'Apex Predator themed hoodie', 39.99),
 ('Roman Reigns Gloves', 'Tribal Chief Special Edition gloves', 29.99),
 ('Brock Lesnar Suplex City Shirt', 'Suplex City graphic tee', 22.99),
-('Undertaker Hat & Coat Set', 'Deadman’s signature attire', 99.99),
+('Undertaker Hat & Coat Set', 'Deadmanâ€™s signature attire', 99.99),
 ('Edge Rated R Necklace', 'Rated R Superstar themed pendant', 15.99);
 
 
@@ -84,16 +84,16 @@ INSERT INTO Orders (CustomerID, OrderDate, TotalAmount) VALUES
 
 
 INSERT INTO OrderDetails (OrderID, ProductID, Quantity) VALUES
-(3000, 2000, 1), -- WWE Championship Belt
-(3001, 2001, 1), -- John Cena T-Shirt
-(3002, 2002, 1), -- The Rock Action Figure
-(3003, 2003, 2), -- Stone Cold Beer Mug
-(3004, 2004, 1), -- Triple H Sledgehammer
-(3005, 2005, 1), -- Randy Orton RKO Hoodie
-(3006, 2006, 1), -- Roman Reigns Gloves
-(3007, 2007, 1), -- Brock Lesnar Suplex City Shirt
-(3008, 2008, 1), -- Undertaker Hat & Coat Set
-(3009, 2009, 1); -- Edge Rated R Necklace
+(3000, 2000, 1),
+(3001, 2001, 1),
+(3002, 2002, 1),
+(3003, 2003, 2),
+(3004, 2004, 1),
+(3005, 2005, 1),
+(3006, 2006, 1),
+(3007, 2007, 1),
+(3008, 2008, 1),
+(3009, 2009, 1);
 
 
 INSERT INTO Inventory (ProductID, QuantityInStock, LastStockUpdate) VALUES
