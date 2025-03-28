@@ -86,10 +86,10 @@ INSERT INTO Applications (JobID, ApplicantID, CoverLetter) VALUES
 */
 --4
 /*
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'JobPortalDB')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'careerhub')
 BEGIN
-    CREATE DATABASE JobPortalDB;
-    PRINT 'Database JobPortalDB created successfully.';
+    CREATE DATABASE careerhub;
+    PRINT 'Database careerhub created successfully.';
 END
 ELSE
     PRINT 'Database already exists.';
