@@ -54,7 +54,7 @@ group by p.productname
 order by times_ordered desc;
 
 --9
-declare @product_name nvarchar(255) = 'wwe titantron speaker'; -- replace with desired product name
+declare @product_name nvarchar(255) = 'wwe titantron speaker';
 
 select distinct c.firstname, c.lastname, c.email, c.phone
 from customers c
@@ -65,8 +65,8 @@ where p.productname = @product_name;
 
 
 --10
-declare @start_date date = '2024-01-01'; -- replace with user input
-declare @end_date date = '2024-12-31'; -- replace with user input
+declare @start_date date = '2024-01-01';
+declare @end_date date = '2024-12-31';
 
 select sum(totalamount) as total_revenue
 from orders
