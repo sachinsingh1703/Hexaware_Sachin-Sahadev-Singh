@@ -60,7 +60,7 @@ values ('wwe titantron speaker', 'bluetooth speaker with wwe entrance themes', 1
 
 
 --11
-alter table orders add status nvarchar(50) default 'pending'; -- run once to add status column if it doesn't exist
+alter table orders add status nvarchar(50) default 'pending'; 
 
 declare @orderid int = 3012;
 declare @newstatus nvarchar(50) = 'shipped';
