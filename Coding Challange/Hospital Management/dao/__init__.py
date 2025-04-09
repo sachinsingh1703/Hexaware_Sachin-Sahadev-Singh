@@ -1,0 +1,1 @@
+"""Data Access Objects package for Hospital Management System""" 

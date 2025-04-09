@@ -1,0 +1,1 @@
+"""Entity package for Hospital Management System""" 

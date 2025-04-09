@@ -1,0 +1,1 @@
+"""Custom exceptions package for Hospital Management System""" 

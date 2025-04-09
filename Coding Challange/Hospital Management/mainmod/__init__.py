@@ -1,0 +1,1 @@
+"""Main module package for Hospital Management System""" 

@@ -1,0 +1,1 @@
+"""Utility package for Hospital Management System""" 
